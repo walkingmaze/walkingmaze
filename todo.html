@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To-Do List | QA Practice Site</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="container header-flex">
+      <h1>QA Practice</h1>
+      <div class="header-right">
+        <span>Welcome, <strong id="welcome-user">Guest</strong>!</span>
+        <a href="login.html" id="logout-link" class="btn-small">Logout</a>
+        <button id="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="todo-section">
+      <h2>My To-Do List</h2>
+
+      <div class="todo-add">
+        <input type="text" id="new-todo" placeholder="Add a new task..." maxlength="100" required />
+        <button id="add-todo-btn">Add Task</button>
+      </div>
+      <div id="todo-error" class="error-msg"></div>
+
+      <ul id="todo-list">
+        <!-- Items injected by JS -->
+        <li class="todo-item" data-id="1">
+          <input type="checkbox" id="todo-1" checked />
+          <label for="todo-1">Practice Selenium WebDriver</label>
+          <button class="delete-btn" aria-label="Delete task">×</button>
+        </li>
+        <li class="todo-item" data-id="2">
+          <input type="checkbox" id="todo-2" />
+          <label for="todo-2">Write Cypress tests</label>
+          <button class="delete-btn" aria-label="Delete task">×</button>
+        </li>
+      </ul>
+
+      <div class="todo-summary">
+        <p>Total: <span id="total-tasks">2</span> | 
+           Completed: <span id="completed-tasks">1</span> | 
+           Remaining: <span id="remaining-tasks">1</span></p>
+        <button id="clear-completed" class="btn-small">Clear Completed</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
