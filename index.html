@@ -1,21 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yuliia Plaksytska</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yuliia Plaksytska | QA Automation Practice</title>
+  <link rel="stylesheet" href="css/style.css" />  <!-- Now matches the shared CSS -->
 </head>
 <body>
-    <header>
-        <h1>Yuliia Plaksytska</h1>
-        <button id="theme-toggle">Toggle Dark Mode</button>
-    </header>
-    <nav>
-        <a href="login.html">Login Practice</a>
-        <a href="todo.html">To-Do List</a>
-        <a href="nonexistent.html">Broken Link (404 Test)</a>
-    </nav>
-    <script src="script.js" defer></script>
+  <header>
+    <div class="container header-flex">
+      <h1>QA Automation Practice Site</h1>
+      <div class="header-right">
+        <span class="greeting">Welcome, <strong id="welcome-user">Guest</strong>!</span>
+        <button id="theme-toggle" aria-label="Toggle dark/light mode">Dark Mode Toggle</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h2>Hi, I'm Yuliia Plaksytska</h2>
+      <p>This is a <strong>static frontend-only</strong> website designed specifically for practicing automation testing (Selenium, Cypress, Playwright, etc.).</p>
+      <p>All features work with <strong>localStorage</strong> — no backend required!</p>
+    </section>
+
+    <section class="practice-links">
+      <h3>Practice Pages</h3>
+      <div class="cards">
+        <a href="login.html" class="card">
+          <h4>Login Form</h4>
+          <p>Test valid/invalid credentials, form validation, alerts</p>
+        </a>
+        <a href="todo.html" class="card">
+          <h4>To-Do List</h4>
+          <p>Add, complete, delete tasks + summary counters + persistence</p>
+        </a>
+        <a href="nonexistent.html" class="card">
+          <h4>404 Error Page</h4>
+          <p>Trigger custom 404 page via broken link</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="test-credentials">
+      <h3>Login Test Credentials</h3>
+      <ul>
+        <li><code>admin</code> / <code>password123</code></li>
+        <li><code>user</code> / <code>test@2025</code></li>
+        <li>Anything else → Invalid</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
