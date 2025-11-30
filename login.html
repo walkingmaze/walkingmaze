@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | QA Practice Site</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="container header-flex">
+      <h1>QA Practice</h1>
+      <button id="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="login-card">
+      <h2>Login to Your Account</h2>
+      <form id="login-form" novalidate>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required autocomplete="username" />
+          <span class="error-msg" id="username-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required autocomplete="current-password" />
+          <span class="error-msg" id="password-error"></span>
+        </div>
+
+        <button type="submit" id="login-btn">Login</button>
+      </form>
+
+      <!-- Success / Error Alert -->
+      <div id="login-alert" class="alert hidden"></div>
+
+      <div class="credentials-hint">
+        <p><strong>Test Credentials:</strong></p>
+        <ul>
+          <li>Valid: <code>admin</code> / <code>password123</code></li>
+          <li>Valid: <code>user</code> / <code>test@2025</code></li>
+          <li>Any other → Invalid</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
