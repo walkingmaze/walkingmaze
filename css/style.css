@@ -69,7 +69,6 @@ body.dark .hero p { color: #bbb; }
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-
 .error-page {
   text-align: center;
   min-height: 100vh;
@@ -150,3 +149,4 @@ body.dark .test-credentials { background: #1a2a3a; }
   gap: 1rem;
 }
 .greeting { font-size: 1rem; }
+
