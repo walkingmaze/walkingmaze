@@ -49,62 +49,6 @@ todo.html
 
 # Files
 
-## File: login.html
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Login | QA Practice Site</title>
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
-  <header>
-    <div class="container header-flex">
-      <h1>QA Practice</h1>
-      <button id="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
-    </div>
-  </header>
-
-  <main class="container">
-    <div class="login-card">
-      <h2>Login to Your Account</h2>
-      <form id="login-form" novalidate>
-        <div class="form-group">
-          <label for="username">Username</label>
-          <input type="text" id="username" name="username" required autocomplete="username" />
-          <span class="error-msg" id="username-error"></span>
-        </div>
-
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" id="password" name="password" required autocomplete="current-password" />
-          <span class="error-msg" id="password-error"></span>
-        </div>
-
-        <button type="submit" id="login-btn">Login</button>
-      </form>
-
-      <!-- Success / Error Alert -->
-      <div id="login-alert" class="alert hidden"></div>
-
-      <div class="credentials-hint">
-        <p><strong>Test Credentials:</strong></p>
-        <ul>
-          <li>Valid: <code>admin</code> / <code>password123</code></li>
-          <li>Valid: <code>user</code> / <code>test@2025</code></li>
-          <li>Any other → Invalid</li>
-        </ul>
-      </div>
-    </div>
-  </main>
-
-  <script src="js/script.js"></script>
-</body>
-</html>
-```
-
 ## File: README.md
 ```markdown
 ## Hi there 👋
@@ -271,6 +215,89 @@ if (document.getElementById('todo-list')) {
 
   render();
 }
+```
+
+## File: login.html
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | QA Practice Site</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="container header-flex">
+      <h1>QA Practice</h1>
+      <button id="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="login-card">
+      <h2>Login to Your Account</h2>
+      <form id="login-form" novalidate>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required autocomplete="username" />
+          <span class="error-msg" id="username-error"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required autocomplete="current-password" />
+          <span class="error-msg" id="password-error"></span>
+        </div>
+
+        <button type="submit" id="login-btn">Login</button>
+      </form>
+
+      <!-- Success / Error Alert -->
+      <div id="login-alert" class="alert hidden"></div>
+
+      <div class="credentials-hint">
+        <p><strong>Test Credentials:</strong></p>
+        <ul>
+          <li>Valid: <code>admin</code> / <code>password123</code></li>
+          <li>Valid: <code>user</code> / <code>test@2025</code></li>
+          <li>Any other → Invalid</li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top:1rem;">
+      <a href="index.html" class="btn-secondary">Go Back</a>
+    </p>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
+```
+
+## File: nonexistent.html
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>404 - Page Not Found</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="error-page container">
+    <h1>404</h1>
+    <p>Oops! The page you're looking for doesn't exist.</p>
+    <div class="btn-container">
+      <a href="index.html" class="btn">Go Home</a>
+      <a href="javascript:history.back()" class="btn-secondary">Go Back</a>
+    </div>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html>
 ```
 
 ## File: repomix-output.xml
@@ -969,16 +996,18 @@ body.dark .test-credentials { background: #1a2a3a; }
 </head>
 <body>
   <header>
-    <div class="container header-flex">
+  <div class="container header-flex">
+    <div class="header-left">
+      <button class="back-btn" type="button" onclick="history.back()">← Back</button>
       <h1>QA Practice</h1>
-      <div class="header-right">
-        <span>Welcome, <strong id="welcome-user">Guest</strong>!</span>
-        <a href="login.html" id="logout-link" class="btn-small">Logout</a>
-        <button id="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
-      </div>
     </div>
-  </header>
-
+    <div class="header-right">
+      <span>Welcome, <strong id="welcome-user">Guest</strong>!</span>
+      <a href="login.html" id="logout-link" class="btn-small">Logout</a>
+      <button id="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
+    </div>
+  </div>
+</header>
   <main class="container">
     <section class="todo-section">
       <h2>My To-Do List</h2>
@@ -1012,30 +1041,6 @@ body.dark .test-credentials { background: #1a2a3a; }
     </section>
   </main>
 
-  <script src="js/script.js"></script>
-</body>
-</html>
-```
-
-## File: nonexistent.html
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>404 - Page Not Found</title>
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
-  <div class="error-page container">
-    <h1>404</h1>
-    <p>Oops! The page you're looking for doesn't exist.</p>
-    <div class="btn-container">
-      <a href="index.html" class="btn">Go Home</a>
-      <a href="javascript:history.back()" class="btn-secondary">Go Back</a>
-    </div>
-  </div>
   <script src="js/script.js"></script>
 </body>
 </html>
@@ -1194,6 +1199,31 @@ body.dark .test-credentials { background: #1a2a3a; }
   gap: 1rem;
 }
 .greeting { font-size: 1rem; }
+
+.header-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.back-btn {
+  background: #6c757d;
+  color: #fff;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.back-btn:hover {
+  background: #5a6268;
+}
 ```
 
 ## File: personal-information.html
@@ -1209,6 +1239,8 @@ body.dark .test-credentials { background: #1a2a3a; }
 <body>
     <header>
         <div class="container header-flex">
+        <div class="header-left">
+      <button class="back-btn" type="button" onclick="history.back()">← Back</button>
             <h1>Personal Information</h1>
             <div class="header-right">
                 <span class="greeting">Welcome, <strong id="welcome-user">Guest</strong>!</span>
@@ -1228,10 +1260,9 @@ body.dark .test-credentials { background: #1a2a3a; }
             <!-- Contact Card -->
             <div class="card">
                 <h4>Contact Information</h4>
-                <p><strong>Email:</strong> yuliiaplaksytska@gmail.com</p>
+                <p><strong>Email:</strong>yuliiaplaksytska@gmail.com</p>
                 <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/yuliiaplaksytska" target="_blank">linkedin.com/in/yuliiaplaksytska</a></p>
-                <p><strong>Address:</strong> Rotlintstraße 38, Frankfurt am Main, 60316, Germany</p>
-                <p><strong>Languages:</strong> German, English, Ukrainian, Russian</p>
+                <p><strong>Languages:</strong> German, English, Ukrainian</p>
             </div>
 
             <!-- Experience Card -->

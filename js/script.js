@@ -25,7 +25,7 @@ if (document.getElementById('login-form')) {
     'user': 'test@2025'
   };
 
-  document.getElementById('login-form').addEventListener('submit', function(e) {
+  document.getElementById('login-form').addEventListener('submit', function (e) {
     e.preventDefault();
     const username = document.getElementById('username').value.trim();
     const password = document.getElementById('password').value;
@@ -91,22 +91,20 @@ if (document.getElementById('todo-list')) {
   addBtn.addEventListener('click', addTodo);
   newTodoInput.addEventListener('keypress', e => e.key === 'Enter' && addTodo());
 
-  function addTodo() {
+  function addTodo() {  // ← NEW SIMPLIFIED FUNCTION
     const text = newTodoInput.value.trim();
     if (!text) {
       errorDiv.textContent = 'Task cannot be empty!';
       return;
     }
-    if (text.length > 100) {
-      errorDiv.textContent = 'Task too long (max 100 chars)';
-      return;
-    }
+    // HTML maxlength="100" handles length validation!
     errorDiv.textContent = '';
     todos.push({ id: nextId++, text, completed: false });
     save();
     render();
     newTodoInput.value = '';
   }
+
 
   todoList.addEventListener('click', e => {
     const li = e.target.closest('.todo-item');
@@ -139,6 +137,16 @@ if (document.getElementById('todo-list')) {
     localStorage.removeItem('loggedInUser');
     window.location.href = 'login.html';
   });
+
+  // Initialize with hardcoded tasks if empty
+  if (todos.length === 0) {
+    todos = [
+      { id: 1, text: 'Practice Selenium WebDriver', completed: true },
+      { id: 2, text: 'Write Cypress tests', completed: false }
+    ];
+    nextId = 3;
+    save();
+  }
 
   render();
 }
