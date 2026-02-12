@@ -30,7 +30,7 @@ The tests cover the following areas of the QA practice site:​
 
 The site itself lives in the project root as static files (index.html, login.html, todo.html, personal-information.html, nonexistent.html), with JavaScript in js/script.js and styling in css/style.css
 
-### 🚀 How to Run Locally
+### How to Run Locally
 
 **Prerequisites:**
 - Node.js 20+ 
@@ -76,7 +76,7 @@ The Playwright configuration lives in tests/playwright.config.js, and the Node/P
 
 ## Project Structure
 
-📄 Root Files
+Root Files
 ├── README.md Main project documentation
 ├── .nojekyll Disable Jekyll for GitHub Pages
 ├── .gitignore Git ignore rules
@@ -153,7 +153,7 @@ GitHub Actions is configured in .github/workflows/test.yml to run the full Playw
 
 
 ### 📈 Results & Screenshots
-- **Status**: All tests passing ✅
+- **Status**: All tests passing 
 - **Report**: Generated at `tests/playwright-report/` (HTML with screenshots/videos)
 - **Multi-browser**: Chromium, Firefox, WebKit (configured in `playwright.config.js`)
 
@@ -185,7 +185,7 @@ await page.click('#login-btn');
 // After POM: Reusable, readable, maintainable
 await loginPage.login('admin', 'password123');
 
-### ⚖️ DRY vs KISS Principles
+###  DRY vs KISS Principles
 
 **DRY (Don't Repeat Yourself):**
 - Common user flows (`login()`, `addTask()`, `checkTodoByIndex()`) are methods in page objects
@@ -212,7 +212,7 @@ Playwright fixtures (`tests/fixtures/fixtures.js`) provided a **centralized test
 - Migrating from local testing to CI required only updating `fixtures.js`, not 50+ test files
 - Adding a new page object (e.g., `PersonalInfoPage`) automatically available to all tests
 
-### 📚 Key Takeaways
+###  Key Takeaways
 
 | Concept | Benefit |
 |---------|---------|
