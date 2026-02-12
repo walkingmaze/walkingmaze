@@ -152,7 +152,7 @@ GitHub Actions is configured in .github/workflows/test.yml to run the full Playw
 - View live runs: [GitHub Actions] https://github.com/walkingmaze/walkingmaze/actions
 
 
-### 📈 Results & Screenshots
+### Results & Screenshots
 - **Status**: All tests passing 
 - **Report**: Generated at `tests/playwright-report/` (HTML with screenshots/videos)
 - **Multi-browser**: Chromium, Firefox, WebKit (configured in `playwright.config.js`)
