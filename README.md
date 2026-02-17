@@ -48,16 +48,16 @@ Install Playwright browsers:
  - npx playwright install
 
 **Run Tests:**
- - Headless mode (fast)
+Headless mode (fast)
  - npx playwright test
 
- - Headed mode (see browser)
+Headed mode (see browser)
  - npx playwright test --headed
 
- - Debug mode (step-through)
+Debug mode (step-through)
  - npx playwright test --debug
 
- - Run single file
+Run single file
  - npx playwright test tests/specs/todo.spec.js
 
 **HTML Report:**
