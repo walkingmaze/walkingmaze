@@ -38,7 +38,7 @@ The site itself lives in the project root as static files (index.html, login.htm
 
 **Setup:**
 Clone repository:
- - git clone https://github.com/walkingmaze/walkingmaze.git
+ - git clone https://github.com/walkingmaze/playwright-qa-practice-site.git
  - cd walkingmaze
 
 Install dependencies:
