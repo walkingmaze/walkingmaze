@@ -30,7 +30,7 @@ export default defineConfig({
   // Global setup
   use: {
     // Base URL for your website
-    baseURL: 'https://walkingmaze.github.io/walkingmaze/',
+    baseURL: 'https://walkingmaze.github.io/playwright-qa-practice-site/',
     
     // Enable tracing for failed tests
     trace: 'on-first-retry',
