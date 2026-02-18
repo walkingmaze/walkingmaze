@@ -115,15 +115,18 @@ test.describe('Todo List Functionality Tests', () => {
   });
 
   test('should calculate remaining tasks correctly', async ({ pageManager }) => {
-    const todoPage = pageManager.getTodoPage();
-    const { validTask } = TEST_DATA.todos;
+  const todoPage = pageManager.getTodoPage();
+  const { validTask } = TEST_DATA.todos;  // Gets "Practice Playwright..."
 
-    await todoPage.addTask(validTask);
-    const initialRemaining = parseInt(await todoPage.getRemainingTasks());
+  const initialRemaining = parseInt(await todoPage.getRemainingTasks());  // =1
+  
+  await todoPage.addTask(validTask);  // Now 2 incomplete → remaining = 2
+  const afterAdd = parseInt(await todoPage.getRemainingTasks());
+  expect(afterAdd).toBe(initialRemaining + 1);
 
-    await todoPage.checkTodoByIndex(0);
+  await todoPage.checkTodoByIndex(2);  // Check the NEW task (index 2: 0=completed, 1=Cypress, 2=new)
+  const newRemaining = parseInt(await todoPage.getRemainingTasks());
+  expect(newRemaining).toBe(afterAdd - 1);  // Now 1 incomplete → remaining = 1
+});
 
-    const newRemaining = parseInt(await todoPage.getRemainingTasks());
-    expect(newRemaining).toBe(initialRemaining - 1);
-  });
 });

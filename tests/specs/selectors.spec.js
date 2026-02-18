@@ -45,10 +45,8 @@ test.describe('Selector & Locator Tests (Module 5)', () => {
     const todoPage = pageManager.getTodoPage();
     await todoPage.navigateToTodo();
 
-    // Add task to create .todo-item elements
     await todoPage.addTask('Test task');
 
-    // Now selector finds items
     const items = await todoPage.page.$$('.todo-item');
     expect(items.length).toBeGreaterThan(0);
   });
@@ -58,7 +56,7 @@ test.describe('Selector & Locator Tests (Module 5)', () => {
     await todoPage.navigateToTodo();
     await todoPage.addTask('Test task');
 
-    await expect(todoPage.page.locator('.delete-btn')).toHaveCount(1);  // Auto-waits
+    await expect(todoPage.page.locator('.delete-btn')).toHaveCount(3);
   });
 
   test('should find theme toggle button', async ({ pageManager }) => {
